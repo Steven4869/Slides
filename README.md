@@ -3,7 +3,8 @@
 # Pre-requisite
 
 Python should  be installed 
-MySQL Workbench 
+
+Database of your choice
 
 ## Getting Started 
 
