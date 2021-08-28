@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/layout.css') }}">
+    <link rel="icon" href="{{ url_for('static',filename='logo.png') }}" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navlinks">
+                <li><a href="/home">Home</a></li>
+                <!-- <li><a href="/profile">Profile</a></li> -->
+            </ul>
+        </nav>
+        <a href="/logout" class="cta"><button>Log out</button></a>
+    </header>
+    <div class="container">
+        <h3 style="text-align: center; color: wheat;">Presentation</h3>
+        <br>
+        <div class="add">
+            <button type="button" id="theboxes">Click to add a slide</button>
+        </div>
+        <form action="/add_slide" method="post">
+            <div class="title">
+                <input type="text" name="title" id="" placeholder="Please enter title of your presentation">
+            </div>
+            <input type="submit" value="Save">
+            <div class="slide-container">
+                <div>
+                    <input type="text" name="heading" placeholder="Please enter the heading" id="title">
+                </div>
+                <div>
+                    <input type="textarea" name="content" placeholder="Please enter the subtitle" id="subtitle">
+                </div>
+            </div>
+        </form>
+        <div class="slides">
+
+        </div>
+        <script>
+            var x = document.getElementById("theboxes");
+            x.addEventListener("click", myfunction)
+            function myfunction() {
+                var box = document.createElement('div')
+                box.classList.add('slide-container')
+                document.body.appendChild(box)
+            }
+        </script>
+
+</body>
+
+</html>

@@ -17,8 +17,10 @@ def home():
     return render_template('login.html')
 @app.route('/home')
 def dashboard():
+    cursor.execute("""SELECT * FROM `post`""")
+    items = cursor.fetchall()
     if 'user_id' in session:
-        return render_template('home.html')
+        return render_template('home.html', items=items)
     else:
         return redirect('/')
 @app.route('/register')
@@ -43,6 +45,15 @@ def login_validation():
         return redirect('/home')
     else:
         return redirect('/')
+@app.route('/slides')
+def slides():
+    return render_template('slides.html')
+@app.route('/add_slide',methods=['POST'])
+def add_slide():
+    title = request.form.get('title')
+    cursor.execute("""INSERT INTO `post` (`title`) VALUES ('{}')""".format(title))
+    conn.commit()
+    return "submitted succesfully"
 @app.route('/logout')
 def logout():
     session.pop('user_id')

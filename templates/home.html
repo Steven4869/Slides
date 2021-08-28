@@ -3,5 +3,14 @@
 <div class="container">
     <h3 style="text-align: center; color: wheat;">Home</h3>
     <br>
+</div>
+<a href="/slides"><button>Click here to create presentation</button></a>
+
+<div class="grid-container">
+    {% for rows in items %}
+    <div class="grid-item">
+        <a href="#" class="cop"><h3 style="text-align: center; margin-top: 100px;">{{rows[1]}}</h3></a>
     </div>
+    {% endfor %}
+</div>
 {% endblock %}

@@ -137,3 +137,35 @@ button:hover{
     font-weight: bold;
     color: #009879;
 }
+.title{
+    width: 600px;
+    margin-left: 400px;
+}
+.slide-container{
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 428px;
+    height: 300px;
+    width: 550px;
+}
+#title{
+    width: 290px;
+    margin-top: 55px;
+    margin-left: 100px;
+    text-align: center;
+    border: 2px solid black;
+}
+#subtitle{
+    width: 300px;
+    height: 80px;
+    margin-left: 99px;
+    text-align: center;
+    margin-top: 55px;
+    border: 2px solid black;
+}
+.cop{
+    color: gray;
+}
+.cop:hover{
+    color: black;
+}
